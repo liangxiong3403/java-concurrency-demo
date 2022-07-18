@@ -1,4 +1,4 @@
-package top.xiangqian.concurrency.beautiful.chapter1;
+package top.xiangqian.concurrency.beautiful.chapter1.sleep;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;

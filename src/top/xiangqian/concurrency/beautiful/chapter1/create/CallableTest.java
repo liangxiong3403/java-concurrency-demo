@@ -1,4 +1,4 @@
-package top.xiangqian.concurrency.beautiful.chapter1;
+package top.xiangqian.concurrency.beautiful.chapter1.create;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;

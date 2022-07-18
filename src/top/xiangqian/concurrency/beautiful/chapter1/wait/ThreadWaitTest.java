@@ -1,4 +1,4 @@
-package top.xiangqian.concurrency.beautiful.chapter1;
+package top.xiangqian.concurrency.beautiful.chapter1.wait;
 
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;

@@ -1,4 +1,4 @@
-package top.xiangqian.concurrency.beautiful.chapter1;
+package top.xiangqian.concurrency.beautiful.chapter1.join;
 
 import java.util.concurrent.TimeUnit;
 

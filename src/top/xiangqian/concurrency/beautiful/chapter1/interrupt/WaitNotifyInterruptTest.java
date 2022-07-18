@@ -1,4 +1,4 @@
-package top.xiangqian.concurrency.beautiful.chapter1;
+package top.xiangqian.concurrency.beautiful.chapter1.interrupt;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,11 +13,11 @@ public class WaitNotifyInterruptTest {
 
     public static void main(String[] args) throws InterruptedException {
         Thread threadA = new Thread(() -> {
-            System.out.println("---begin---");
             synchronized (object) {
                 try {
+                    System.out.println("---begin wait---");
                     object.wait();
-                    System.out.println("---end---");
+                    System.out.println("---end wait---");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
