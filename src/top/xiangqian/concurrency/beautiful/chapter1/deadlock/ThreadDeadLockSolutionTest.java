@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * @Author liangxiong
  * @Project
- * @Description
+ * @Description 多个线程对资源加锁顺序保持一致
  * @Date 2022-07-19
  */
 public class ThreadDeadLockSolutionTest {
