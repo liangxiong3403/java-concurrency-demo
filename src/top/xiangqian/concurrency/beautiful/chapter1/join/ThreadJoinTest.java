@@ -12,6 +12,7 @@ public class ThreadJoinTest {
     public static void main(String[] args) throws InterruptedException {
         Thread threadOne = new Thread(() -> {
             try {
+                System.out.println("threadOne begin sleep");
                 TimeUnit.SECONDS.sleep(3);
                 System.out.println("threadOne sleep over");
             } catch (InterruptedException e) {
@@ -21,6 +22,7 @@ public class ThreadJoinTest {
 
         Thread threadTwo = new Thread(() -> {
             try {
+                System.out.println("threadTwo begin sleep");
                 TimeUnit.SECONDS.sleep(1);
                 System.out.println("threadTwo sleep over");
             } catch (InterruptedException e) {
