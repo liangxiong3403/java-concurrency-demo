@@ -25,7 +25,7 @@ public class ThreadDeadLockTest {
                     e.printStackTrace();
                 }
                 System.out.println("threadA get resourceB lock");
-                System.out.println("threadA try to get resourceB lock");
+                System.out.println("threadA try to get resourceA lock");
                 synchronized (resourceA) {
                     System.out.println("threadA get resourceA lock");
                 }
