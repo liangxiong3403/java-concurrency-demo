@@ -14,6 +14,6 @@ public class ThreadSafeTest {
     }
 
     public synchronized void increase() {
-        ++this.count;
+        ++count;
     }
 }
