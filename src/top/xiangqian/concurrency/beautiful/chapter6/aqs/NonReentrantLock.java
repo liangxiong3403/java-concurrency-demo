@@ -40,7 +40,7 @@ public class NonReentrantLock implements Lock, Serializable {
             return getState() == 1;
         }
 
-        ConditionObject newConditionObject() {
+        ConditionObject newCondition() {
             return new ConditionObject();
         }
     }
@@ -79,6 +79,6 @@ public class NonReentrantLock implements Lock, Serializable {
      */
     @Override
     public Condition newCondition() {
-        return sync.newConditionObject();
+        return sync.newCondition();
     }
 }

@@ -2,6 +2,7 @@ package top.xiangqian.concurrency.beautiful.chapter6.aqs;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 
 /**
@@ -62,6 +63,9 @@ public class NonReentrantLockTest {
         });
 
         producer.start();
+
+        TimeUnit.MILLISECONDS.sleep(200);
+
         consumer.start();
     }
 }
