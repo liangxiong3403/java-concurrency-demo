@@ -27,7 +27,8 @@ public class NonReentrantLock implements Lock, Serializable {
         @Override
         public boolean tryRelease(int acquires) {
             assert acquires == 1;
-            if (getState() == 0) {
+            if (getExclusiveOwnerThread() != Thread.currentThread()) {
+                // 锁的持有者不是当前线程
                 throw new IllegalMonitorStateException();
             }
             setExclusiveOwnerThread(null);
@@ -37,7 +38,8 @@ public class NonReentrantLock implements Lock, Serializable {
 
         @Override
         public boolean isHeldExclusively() {
-            return getState() == 1;
+            // 锁的持有者就是当前线程
+            return getExclusiveOwnerThread() == Thread.currentThread();
         }
 
         ConditionObject newCondition() {

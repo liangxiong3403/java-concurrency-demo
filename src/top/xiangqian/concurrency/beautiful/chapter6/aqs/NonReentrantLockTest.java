@@ -22,14 +22,13 @@ public class NonReentrantLockTest {
 
     private static final Queue<String> QUEUE = new LinkedBlockingQueue<>(QUEUE_SIZE);
 
-
     public static void main(String[] args) throws InterruptedException {
         Thread producer = new Thread(() -> {
             System.out.println("producer begin");
             LOCK.lock();
             try {
                 while (QUEUE.size() == QUEUE_SIZE) {
-                    // wait consumer
+                    // wait consumer, avoiding call spuriously
                     NOT_EMPTY.await();
                 }
                 QUEUE.add("hello world");
@@ -52,7 +51,7 @@ public class NonReentrantLockTest {
                 }
                 String message = QUEUE.poll();
                 System.out.println("message: " + message);
-                // notify producer
+                // notify producer, avoiding call spuriously
                 NOT_EMPTY.signalAll();
             } catch (InterruptedException e) {
                 e.printStackTrace();
