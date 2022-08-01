@@ -69,9 +69,9 @@ public class ReentrantReadWriteLockListTest {
     }
 
     public static void main(String[] args) {
-        NUMBERS.add("1");
-        NUMBERS.add("21");
-        NUMBERS.add("31");
-        System.out.println(NUMBERS.get(2));
+        add("1");
+        add("21");
+        add("31");
+        System.out.println(get(2));
     }
 }
